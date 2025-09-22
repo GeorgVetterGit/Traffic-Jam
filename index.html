@@ -17,24 +17,24 @@
     body{margin:0;background:var(--bg);color:#0f172a;line-height:1.45}
     .container{max-width:1100px;margin:28px auto;padding:20px}
 
-    /* Banner */
     .hero{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(2,6,23,0.08)}
     .hero img{width:100%;height:320px;object-fit:cover;display:block}
+    .hero video{width:100%;height:320px;object-fit:cover;display:block}
     .hero .overlay{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(180deg,rgba(2,6,23,0) 0%, rgba(2,6,23,0.45) 55%, rgba(2,6,23,0.6) 100%);color:#fff}
     .hero h1{margin:0;font-size:clamp(20px,3.6vw,30px)}
     .meta{font-size:14px;opacity:.95;margin-top:6px}
 
-    /* Grid */
     .grid{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:20px}
-    @media (max-width:980px){.grid{grid-template-columns:1fr}.hero img{height:220px}}
+    @media (max-width:980px){.grid{grid-template-columns:1fr}.hero img{height:220px}.hero video{height:220px}}
 
-    /* Card */
     .card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(5,10,25,0.04)}
     h2{margin:0 0 10px 0}
     p{margin:0 0 12px 0;color:var(--muted)}
     ul{margin:0 0 12px 20px;color:var(--muted)}
 
-    /* Links / simulations */
+    .screenshots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:14px 0}
+    .screenshots img{width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);object-fit:cover}
+
     .sim-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
     @media (max-width:520px){.sim-list{grid-template-columns:1fr}}
     .sim{display:flex;gap:12px;align-items:center;padding:10px;border-radius:8px;border:1px solid #e6edf6}
@@ -42,30 +42,26 @@
     .sim a{color:var(--accent);font-weight:600;text-decoration:none}
     .sim small{display:block;color:var(--muted)}
 
-    /* Timeline */
-    .timeline{border-left:3px solid #e6eefc;padding-left:14px}
-    .timeline .item{margin-bottom:14px}
-    .timeline time{font-size:13px;color:var(--muted)}
+    .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+    .tag{background:#e0e7ff;color:#1e40af;padding:4px 10px;border-radius:9999px;font-size:13px;font-weight:500}
 
-    /* Footer */
     footer{margin-top:18px;text-align:center;color:var(--muted);font-size:14px}
 
-    /* Modal for embedded simulation preview */
+    .links{margin-top:20px;display:flex;gap:12px}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(37,99,235,0.12)}
+
     .modal{position:fixed;inset:0;background:rgba(2,6,23,0.6);display:none;align-items:center;justify-content:center;padding:18px;z-index:60}
     .modal.open{display:flex}
     .modal .frame{width:100%;max-width:980px;background:var(--card);border-radius:10px;overflow:hidden}
     .modal .frame header{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #eef2f7}
     .modal iframe{width:100%;height:600px;border:0}
-    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
-    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(37,99,235,0.12)}
   </style>
 </head>
 <body>
   <div class="container">
-
-    <section class="hero" role="img" aria-label="Bannerbild des Projekts">
-      <!-- Ersetze das src durch dein eigenes Bild oder URL -->
-      <img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=example" alt="Bannerbild: Büro / Team / Simulation" />
+    <section class="hero" role="img" aria-label="Bannerbereich des Projekts">
+      <video autoplay loop muted playsinline poster="https://via.placeholder.com/1400x320.png?text=Video+Fallback" src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
       <div class="overlay">
         <h1>Projektname — Kurzbericht</h1>
         <div class="meta">Projektzeitraum: 01.04.2025 – 30.06.2025 · Team: Beispielgruppe</div>
@@ -77,6 +73,12 @@
         <div class="card">
           <h2>Kurzzusammenfassung</h2>
           <p>Dieser Kurzbericht fasst die wichtigsten Ziele, Methoden und Ergebnisse des Projekts zusammen. Er ist bewusst kompakt gehalten und verweist auf interaktive Simulationen weiter unten.</p>
+
+          <div class="screenshots">
+            <img src="https://via.placeholder.com/400x250.png?text=Screenshot+1" alt="Projekt-Screenshot 1">
+            <img src="https://via.placeholder.com/400x250.png?text=Screenshot+2" alt="Projekt-Screenshot 2">
+            <img src="https://via.placeholder.com/400x250.png?text=GIF+oder+Animation" alt="Projekt-GIF oder Animation">
+          </div>
 
           <h2>Ziele</h2>
           <ul>
@@ -93,31 +95,17 @@
             <li>Die Simulation bestätigt die erwartete Skalierbarkeit bis N = 1.000.</li>
           </ul>
 
-          <h2>Empfehlungen</h2>
-          <p>Für die nächste Phase empfehlen wir: 1) einheitliches Monitoring aufzubauen, 2) automatisierte Tests zu erweitern, 3) Zugänglichkeitstests (WCAG) durchzuführen.</p>
-        </div>
+          <div class="tags">
+            <span class="tag">Simulation</span>
+            <span class="tag">Data Visualisation</span>
+            <span class="tag">Game</span>
+          </div>
 
-        <div class="card" style="margin-top:16px">
-          <h2>Projekt-Timeline</h2>
-          <div class="timeline">
-            <div class="item">
-              <strong>April 2025 — Kickoff</strong>
-              <time>01.04.2025</time>
-              <p>Aufsetzen der Infrastruktur, Anforderungen erheben.</p>
-            </div>
-            <div class="item">
-              <strong>Mai 2025 — Prototyp</strong>
-              <time>05.05.2025</time>
-              <p>Erste Prototyp-Iteration, Usability-Tests mit 10 Nutzern.</p>
-            </div>
-            <div class="item">
-              <strong>Juni 2025 — Abschluss</strong>
-              <time>28.06.2025</time>
-              <p>Analyse, Abschlusspräsentation, und Übergabe der Simulationen.</p>
-            </div>
+          <div class="links">
+            <a class="btn" href="https://medium.com" target="_blank" rel="noopener">Medium</a>
+            <a class="btn ghost" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
-
       </main>
 
       <aside>
@@ -158,15 +146,6 @@
               </div>
             </article>
           </div>
-
-          <hr style="margin:12px 0;border:none;border-top:1px solid #eef2f7" />
-          <p style="font-size:13px;color:var(--muted)">Tipp: Ersetze die <code>data-src</code>-URLs durch die echten Pfade Deiner Simulationen oder Spiele. Falls eine Seite Iframes verbietet, öffne sie in einem neuen Tab.</p>
-        </div>
-
-        <div class="card" style="margin-top:16px">
-          <h2>Kontakt & Ressourcen</h2>
-          <p>Projektleiter: Max Mustermann · <a href="mailto:kontakt@example.org">kontakt@example.org</a></p>
-          <p><a class="btn ghost" href="#">PDF-Bericht herunterladen</a></p>
         </div>
       </aside>
     </div>
@@ -176,7 +155,6 @@
     </footer>
   </div>
 
-  <!-- Modal für Simulationen -->
   <div id="simModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="frame" role="document">
       <header>
@@ -191,7 +169,6 @@
   </div>
 
   <script>
-    // Interaktivität: Simulationen im Overlay öffnen
     document.querySelectorAll('.open-sim').forEach(el=>{
       el.addEventListener('click', function(e){
         e.preventDefault();
@@ -213,10 +190,8 @@
       const frame = document.getElementById('simFrame');
       modal.classList.remove('open');
       modal.setAttribute('aria-hidden','true');
-      // stop the iframe
       frame.src = 'about:blank';
     })
-    // close modal on background click
     document.getElementById('simModal').addEventListener('click', (ev)=>{
       if(ev.target.id === 'simModal') document.getElementById('closeModal').click();
     })
