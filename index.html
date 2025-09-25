@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projekt — Kurzbericht</title>
-  <meta name="description" content="Kurzbericht eines Projekts mit Banner, Zusammenfassung, Ergebnissen und Links zu Spielen/Simulationen." />
+  <title>Project Report</title>
+  <meta name="description" content="Project Report." />
   <style>
     :root{
       --accent:#2563eb;
@@ -61,39 +61,62 @@
 <body>
   <div class="container">
     <section class="hero" role="img" aria-label="Bannerbereich des Projekts">
-      <video autoplay loop muted playsinline poster="https://via.placeholder.com/1400x320.png?text=Video+Fallback" src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+      <video autoplay loop muted playsinline poster="https://via.placeholder.com/1400x320.png?text=Video+Fallback" src="assets/TJS.mov"></video>
       <div class="overlay">
-        <h1>Projektname — Kurzbericht</h1>
-        <div class="meta">Projektzeitraum: 01.04.2025 – 30.06.2025 · Team: Beispielgruppe</div>
+        <h1>Traffic Jam Simulation</h1>
+        <div class="meta">Project Report</div>
       </div>
     </section>
 
     <div class="grid">
       <main>
         <div class="card">
-          <h2>Kurzzusammenfassung</h2>
-          <p>Dieser Kurzbericht fasst die wichtigsten Ziele, Methoden und Ergebnisse des Projekts zusammen. Er ist bewusst kompakt gehalten und verweist auf interaktive Simulationen weiter unten.</p>
+          <h2>Introduction</h2>
+          <p>The goal of this project was to develop a Pygame simulation that demonstrates how traffic jams can emerge on a circular road. Through a graphical user interface, users can adjust the number of vehicles, acceleration, and braking distance. This allows for experimentation with different traffic conditions and helps illustrate how small changes in driving behavior or vehicle density can lead to complex phenomena such as "phantom traffic jams".</p>
 
           <div class="screenshots">
-            <img src="https://via.placeholder.com/400x250.png?text=Screenshot+1" alt="Projekt-Screenshot 1">
-            <img src="https://via.placeholder.com/400x250.png?text=Screenshot+2" alt="Projekt-Screenshot 2">
-            <img src="https://via.placeholder.com/400x250.png?text=GIF+oder+Animation" alt="Projekt-GIF oder Animation">
+            <img src="assets/Screenshot1.png" alt="Projekt-Screenshot 1">
           </div>
 
-          <h2>Ziele</h2>
-          <ul>
-            <li>Validierung des Verfahrens X unter realistischen Bedingungen</li>
-            <li>Implementierung einer einfachen Simulation zur Demonstration von Y</li>
-            <li>Evaluation von Nutzerfeedback und Performance-Metriken</li>
-          </ul>
+          <h2>Research Question</h2>
+          <p>The central question was: Under what conditions do traffic jams emerge, even without external disturbances such as accidents or obstacles?</p>
 
-          <h2>Methoden & Ergebnisse</h2>
-          <p>Wir haben eine Kombination aus Prototyping, Usability-Tests und Datenanalyse verwendet. Die wichtigsten Erkenntnisse sind:</p>
-          <ul>
-            <li>Prototyp zeigte eine durchschnittliche Performance von 92 % auf den Kernmetriken.</li>
-            <li>Nutzerfeedback führte zu drei prioritären Verbesserungswünschen.</li>
-            <li>Die Simulation bestätigt die erwartete Skalierbarkeit bis N = 1.000.</li>
-          </ul>
+          <h2>Relevance of the Question</h2>
+          <p>This investigation is important because it highlights the fundamental mechanisms of traffic flow. Understanding these processes is relevant for traffic management, urban mobility planning, and the development of autonomous vehicles.</p>
+
+          <h2>Data Basis</h2>
+          <p>The data was generated synthetically within the simulation. It included the positions, speeds, and accelerations of vehicles. At each simulation step (tick), the state of every vehicle was recorded</p>
+
+          <h2>Methods and Modeling</h2>
+          <p>The model is based on simple physical rules: vehicles accelerate as long as they have enough distance to the car in front, and they brake once the braking distance is exceeded. This agent-based approach was chosen because it captures the essential dynamics of traffic flow in a way that is computationally efficient and easy to interpret.<br><br>
+          The model parameters were adjusted and tested until realistic traffic behavior was observed: smooth flow at low densities, and congestion when vehicle density was high or braking distances were too short.</p>
+
+          <h2>Validation</h2>
+          <p>Validation was done through observation: the simulation produced traffic jam phenomena that are well-documented in real-world studies. This confirmed that the model was able to reproduce fundamental traffic dynamics correctly.</p>
+
+          <h2>Visualization and Results</h2>
+          <p>The results were presented in two ways:<br><br>
+
+          Visually in Pygame – cars move around the circular road, making traffic jams easy to recognize.</p>
+          <div class="screenshots">
+            <img src="assets/Screenshot2.png" alt="Projekt-Screenshot 2">
+          </div>
+
+          <p>Numerically – minimum, maximum, and average speeds were calculated and displayed to quantify traffic flow.</p>
+          <div class="screenshots">
+            <img src="assets/Screenshot4.png" alt="Projekt-Screenshot 2">
+          </div>
+
+          <p>The simulation revealed that high vehicle density or very short braking distances caused “wave patterns” in speed, which eventually led to traffic congestion</p>
+
+          <h2>Insights</h2>
+          <p>The project showed that even simple rules can create complex, emergent phenomena. A particularly striking result was that traffic jams often occur without any external cause.</p>
+
+          <h2>Outlook</h2>
+          <p>Future improvements could include more realistic driver models (e.g., reaction times, individual differences) as well as experiments with autonomous vehicles to study their influence on overall traffic flow.</p>
+
+          <h2>Business Case</h2>
+          <p>The simulation provides practical value in education, research, and industry. It can be used to illustrate traffic phenomena, serve as a testbed for autonomous driving algorithms, or support decision-making in traffic and urban planning.</p>
 
           <div class="tags">
             <span class="tag">Simulation</span>
@@ -102,56 +125,32 @@
           </div>
 
           <div class="links">
-            <a class="btn" href="https://medium.com" target="_blank" rel="noopener">Medium</a>
-            <a class="btn ghost" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn ghost" href="https://github.com/GeorgVetterGit/Traffic-Jam" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </main>
 
       <aside>
         <div class="card">
-          <h2>Interaktive Simulationen & Spiele</h2>
-          <p>Hier findest du Links zu unseren Demos und Demo-Spielen. Klick auf "Vorschau", um eine Simulation in einem Overlay zu starten (sofern die Seite Iframes erlaubt).</p>
+          <h2>Test the Simulation Yourself</h2>
+          <p>The simulation is available online and can be tested directly. Users can adjust braking distance, acceleration, and number of vehicles to observe the effects on traffic flow.</p>
 
           <div class="sim-list">
             <article class="sim">
-              <div class="thumb">A</div>
+              <div class="thumb">Sim</div>
               <div>
-                <a href="#" data-src="https://example.com/simulationA" class="open-sim">Simulation A</a>
-                <small>Agentenbasiertes Modell — Klick für Vorschau</small>
+                <a href="#" data-src="https://georgvettergit.github.io/assets/traffic_jam_sim/simulation/index.html" class="open-sim">Traffic Jam Simulation</a>
+                <small>Adjust braking distance, acceleration, and number of vehicles to observe the effects on traffic flow.</small>
               </div>
             </article>
 
-            <article class="sim">
-              <div class="thumb">B</div>
-              <div>
-                <a href="#" data-src="https://example.com/gameB" class="open-sim">Spiel B</a>
-                <small>Interaktives Lernspiel</small>
-              </div>
-            </article>
-
-            <article class="sim">
-              <div class="thumb">C</div>
-              <div>
-                <a href="https://example.com/simulationC" target="_blank" rel="noopener">Simulation C (extern)</a>
-                <small>Öffnet in neuem Tab</small>
-              </div>
-            </article>
-
-            <article class="sim">
-              <div class="thumb">D</div>
-              <div>
-                <a href="https://example.com/gameD" target="_blank" rel="noopener">Spiel D</a>
-                <small>Browsergame — direkt starten</small>
-              </div>
-            </article>
           </div>
         </div>
       </aside>
     </div>
 
     <footer>
-      © 2025 Projektteam — Kurzbericht
+      © 2025 Georg Vetter. All rights reserved.
     </footer>
   </div>
 
